@@ -1,6 +1,5 @@
 # Local Files
-environments/*
-config.json
+*.env
 
 # compiled output
 /dist
