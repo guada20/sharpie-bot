@@ -11,14 +11,13 @@ import { EnvironmentConfigService } from 'src/services/environment-config/enviro
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.development.env'],
+      envFilePath: ['.env.development.local'],
       // envFilePath: ['development.local.env', '.development.env'],
       isGlobal: true,
-    }),    
+    }),
     RouterModule.register([
       {
         path: '',
-        module: AppModule,
       },
       {
         path: 'connection',
@@ -29,4 +28,4 @@ import { EnvironmentConfigService } from 'src/services/environment-config/enviro
   controllers: [AppController, ConnectionController],
   providers: [AppService, ConnectionService, EnvironmentConfigService],
 })
-export class AppModule {}
+export class AppModule { }
