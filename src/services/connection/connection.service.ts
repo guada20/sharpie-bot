@@ -4,7 +4,7 @@ import { EnvironmentConfigService } from '../environment-config/environment-conf
 
 @Injectable()
 export class ConnectionService {
-  constructor(private readonly envConfig: EnvironmentConfigService) {}
+  constructor(private readonly envConfig: EnvironmentConfigService) { }
 
   async connect(): Promise<Client> {
     const client = new Client({
@@ -22,9 +22,10 @@ export class ConnectionService {
       console.log(`Logged in as ${c.guilds.valueOf()}`, c.user);
     });
 
-    const token = this.envConfig.getToken();
-    console.log(token);
-    // await client.login(token);
+    const token: string = this.envConfig.getToken();
+    // console.log('token', token);
+    const clU = await client.login(token);
+    console.log('Response', clU);
     return client;
   }
 }
