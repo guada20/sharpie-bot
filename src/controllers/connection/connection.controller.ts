@@ -8,6 +8,8 @@ export class ConnectionController {
 
   @Get()
   getConnection(): Promise<Client> {
+    var comment = 'connection';
+    console.log(comment);
     const connection = this.cnnService.connect();
     return connection;
   }
