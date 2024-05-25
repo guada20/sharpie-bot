@@ -7,6 +7,8 @@ export class AppController {
 
   @Get()
   getHello(): string {
+    var comment = "esto es un comentario";
+    console.log(comment);
     return this.appService.getHello();
   }
 }
